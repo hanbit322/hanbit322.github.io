@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function(){
   const daysTag = document.querySelector(".calendar .days");  
   let currYear = new Date().getFullYear();
   let currMonth = 6;
+
+  const checkIos = () => {
+    const { innerHeight } = window;
+    document.querySelector('.card').style.setProperty("--app-height",`${innerHeight}px`);
+  }
   
   const renderCalendar = () => {
       const date = new Date(currYear, currMonth, 1);
@@ -142,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
 
+  checkIos();
   renderCalendar();
   copyButton();
   makeMap();
