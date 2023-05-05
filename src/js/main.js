@@ -132,11 +132,11 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   const dropdown = () => {
-    document.querySelectorAll('.dropdown').forEach(item => {
+    document.querySelectorAll('.dropdown > .notosans').forEach(item => {
       item.addEventListener('click', () => {
-        item.classList.contains('active')
-        ? item.classList.remove('active')
-        : item.classList.add('active');
+        item.parentElement.classList.contains('active')
+        ? item.parentElement.classList.remove('active')
+        : item.parentElement.classList.add('active');
       })
     })
   }
